@@ -1,0 +1,37 @@
+history
+ssh-keygen -t ed25519
+cat $HOME/.ssh/*.pub
+mkdir repogit
+cd repogit/
+git clone git@github.com:FacundoBerges/TP1_AySO.git
+cd TP1_AySO/
+pwd
+ls -la
+cat /etc/os-release 
+man grep 
+grep -i "home_url" /etc/os-release
+whoami 
+id -un
+echo "Usuario:$(whoami)" > datos_usuario.txt
+git add .
+git config --global user.email facundo.h.berges@gmail.com
+git config --global user.name FacundoBerges
+git commit -m "ADD: agregado 1er ejercicio sobre datos_usuarios.txt"
+git status 
+git push 
+cat /proc/cpuinfo
+cat /proc/cpuinfo | grep -i "model name" | head -n1 >> datos_usuario.txt
+cat datos_usuario.txt 
+git add .
+git commit -m "feat: Añadiendo información de CPU"
+cat << EOF >> README.md 
+Alumno: Facundo Berges
+División: 313
+Turno: Noche
+EOF
+
+cat README.md 
+git add README.md datos_usuario.txt 
+git commit -m "ADD: Añadiendo readme y datos de usuario"
+git push 
+history -a
